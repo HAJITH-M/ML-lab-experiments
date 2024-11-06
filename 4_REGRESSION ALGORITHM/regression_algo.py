@@ -11,7 +11,7 @@ class LocallyWeightedRegression:
 
     def kernel(self, query_point, X):
         n = len(X)
-        Weight_matrix = np.mat(np.eye(n))
+        Weight_matrix = np.asmatrix(np.eye(n))
         
         for idx in range(n):
             diff = X[idx] - query_point
@@ -19,7 +19,7 @@ class LocallyWeightedRegression:
         return Weight_matrix
 
     def predict(self, X, Y, query_point):
-        q = np.mat([query_point, 1])
+        q = np.asmatrix([query_point, 1])
         X_ext = np.hstack((X, np.ones((len(X), 1))))
         W = self.kernel(q, X_ext)
         
