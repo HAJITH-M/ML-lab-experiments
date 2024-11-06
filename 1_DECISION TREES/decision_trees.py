@@ -1,3 +1,4 @@
+#pip install -r requirements.txt
 from matplotlib import pyplot as plt
 import pandas
 from sklearn import tree
@@ -11,8 +12,6 @@ features = ['Age', 'Experience', 'Rank', 'Nationality']
 X = df[features]
 y = df['Go']
 dtree = DecisionTreeClassifier()
-
-6
 
 dtree = dtree.fit(X, y)
 tree.plot_tree(dtree,feature_names=features)
